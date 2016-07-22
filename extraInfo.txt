@@ -1,0 +1,4 @@
+
+// through install external libs through .d.ts files 
+
+typings install dt~jquery --global --save

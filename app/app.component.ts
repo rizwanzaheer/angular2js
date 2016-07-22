@@ -1,3 +1,5 @@
+/// <reference path="../typings/globals/jquery/index.d.ts" />
+/// <reference path="../typings/globals/underscore/index.d.ts" />
 
 import { Component } from '@angular/core';
 import { StarComponent } from './star.component';
@@ -54,31 +56,31 @@ export class AppComponent {
 
         // Observable
 
-        // var keyups = Observable.fromEvent($("#search"), "keyup");
-        // keyups.subscribe( data => console.log(data));
+         var keyups = Observable.fromEvent($("#search"), "keyup");
+         keyups.subscribe( data => console.log(data));
 
 
 
-        // var debounced = _.debounce(function (text) {
-        //     var url = "https://api.spotify.com/v1/search?type=artist&q=" + text;
-        //     $.getJSON(url, function (artists) {
-        //         console.log(artists);
+         var debounced = _.debounce(function (text) {
+             var url = "https://api.spotify.com/v1/search?type=artist&q=" + text;
+            $.getJSON(url, function (artists) {
+                console.log(artists);
                 
-        //     });
-        // },400);
+             });
+         },400);
 
-        // $("#search").keyup(function (e) {
-        //     var text = e.target.value;
-        //     console.log("Zaheer");
+         $("#search").keyup(function (e) {
+             var text = e.target.value;
+             console.log("Zaheer");
             
 
-        //     if (text.length < 3) {
-        //         return;
-        //     } 
-        //     console.log("attique");
-        //     debounced(text);
+             if (text.length < 3) {
+                 return;
+             } 
+             console.log("attique");
+             debounced(text);
             
-        // });
+         });
     }
     votePost = {
         voteCount : 10,
