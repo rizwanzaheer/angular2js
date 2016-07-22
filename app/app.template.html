@@ -1,0 +1,121 @@
+<h1>WelCome to Angular 2 Application! </h1>
+<br>
+<br>
+
+    <input type="text" id="search" class="form-control" placeholder="Search">
+
+<br>
+<br>
+<h1>Change Password Form</h1>
+<change-password>
+
+</change-password>
+<br>
+<br>
+<h1>SignUp Form</h1>
+<signup-form>
+    
+</signup-form>
+<br>
+<br>
+<h1> Subscription Form</h1>
+<contact-form>
+    
+</contact-form>
+<br>
+<br>
+<ul class="nav nav-pills">
+    <li [class.active]= "viewMode == 'mapView'">
+        <a (click)="viewMode = 'mapView' "> 
+            Map View
+        </a>
+    </li>
+    <li [class.active]="viewMode == 'listView'">
+        <a (click)="viewMode = 'listView' ">
+            List View
+        </a>
+    </li>
+</ul>
+<div [ngSwitch]="viewMode" >
+    <template [ngSwitchWhen]="'mapView'" ngSwitchDefault> Map View Content </template>
+    <template [ngSwitchWhen]="'listView'"> List View Content </template>
+</div>
+<br>
+
+<bs-panel>
+    <div class="heading">
+        This is Heading!
+    </div>
+    <div class="body">
+        Hurray! This is a body on working style!
+    </div>
+
+</bs-panel>
+
+<zippy zippytitle="Who can see my Stuff?">
+    Content of who can see  my Stuff..
+</zippy>
+
+<zippy zippytitle="Who can Contact me?">
+    Content of who can Contect me...
+</zippy>
+
+<br />
+<star 
+[isFavorite]="post.isFavorite" 
+(change)="onFavoriteChange( $event )"
+>
+</star>
+<span > {{ count }} </span>
+<br />
+<like 
+    [totalLikes]="tweet.totalLikes" 
+    [iLike]="tweet.iLike"
+> 
+</like>
+<voter 
+    [voteCount]="votePost.voteCount"
+    [myVote]="votePost.myVote"
+    (vote)="onVote( $event )"
+>
+</voter>
+<br />
+<div *ngIf="tweets.length > 0" [hidden] = "tweets.length <= 0">
+        
+    <div  *ngFor="let tweet of tweets">
+        <tweet [data]="tweet"></tweet>
+    </div>
+
+</div>
+
+<div>
+    <button [ngStyle] = "{
+        backgroundColor: canSave ? 'deeppink' : 'gray',
+        color: canSave ? 'white' : 'black',
+        fontWeight: canSave ? 'bold' : 'normal'
+        }
+    ">
+        Submit
+    </button>
+</div>
+
+<br>
+
+<div class="container">
+    <br />
+    {{ courses.title | uppercase}}
+    <br />
+    {{ courses.student | number }}
+    <br />
+    {{ courses.rating |number:'2.2-2'}}
+    <br />
+    {{ courses.price | currency:'PAK':false:'2.2-2' }}
+    <br />
+    {{ courses.releaseDate | date:'dd MMM yyyy'}}
+    <br />
+    {{ courses.body | summary }}
+    <br />
+    {{ courses | json }}
+   
+
+</div>
