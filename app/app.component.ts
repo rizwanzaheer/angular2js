@@ -69,18 +69,18 @@ export class AppComponent {
              });
          },400);
 
-         $("#search").keyup(function (e) {
-             var text = e.target.value;
-             console.log("Zaheer");
+        //  $("#search").keyup(function (e) {
+        //      var text = e.target.value;
+        //      console.log("Zaheer");
             
 
-             if (text.length < 3) {
-                 return;
-             } 
-             console.log("attique");
-             debounced(text);
+        //      if (text.length < 3) {
+        //          return;
+        //      } 
+        //      console.log("attique");
+        //      debounced(text);
             
-         });
+        //  });
     }
     votePost = {
         voteCount : 10,
