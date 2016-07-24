@@ -56,18 +56,18 @@ export class AppComponent {
 
         // Observable
 
-         var keyups = Observable.fromEvent($("#search"), "keyup");
-         keyups.subscribe( data => console.log(data));
+        //  var keyups = Observable.fromEvent($("#search"), "keyup");
+        //  keyups.subscribe( data => console.log(data));
 
 
 
-         var debounced = _.debounce(function (text) {
-             var url = "https://api.spotify.com/v1/search?type=artist&q=" + text;
-            $.getJSON(url, function (artists) {
-                console.log(artists);
+        //  var debounced = _.debounce(function (text) {
+        //      var url = "https://api.spotify.com/v1/search?type=artist&q=" + text;
+        //     $.getJSON(url, function (artists) {
+        //         console.log(artists);
                 
-             });
-         },400);
+        //      });
+        //  },400);
 
         //  $("#search").keyup(function (e) {
         //      var text = e.target.value;
