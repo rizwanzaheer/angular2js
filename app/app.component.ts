@@ -13,7 +13,11 @@ import { ZippyComponent } from './zippy.component';
 import { ContactFormComponent } from './contact-form.component';
 import { SignUpFormComponent } from './signup-form.component';
 import { ChangePasswordComponent } from './change-password.component';
-import { Observable } from 'rxjs/RX';
+import	{ControlGroup,	FormBuilder} from '@angular/common';
+import { Observable } from 'rxjs/Rx';
+// import { Observable } from 'rxjs/Observable';
+// import 'rxjs/add/operator';
+// import 'rxjs/add/operator/filter';
 
 @Component({
     selector: 'my-app',
@@ -39,6 +43,7 @@ import { Observable } from 'rxjs/RX';
 })
 
 export class AppComponent {
+    form: ControlGroup;    
     canSave = true;
     viewMode = 'mapView';
     tweets: any[];
@@ -51,36 +56,102 @@ export class AppComponent {
         releaseDate: new Date(),
         body:"This is a Body!",
     }
-    constructor(tweetService: TweetService){
+
+    constructor(tweetService: TweetService, fb: FormBuilder){
+        	
+
         this.tweets = tweetService.getTweets();
+        	this.form = fb.group({
+							search:	[]
+        });
 
-        // Observable
+        // var	search = this.form.find('search');
+        // search.valueChanges
+        //     .debounceTime(400)
+        //     .map(str =>	(<string>str).replace(' ','-'))
+        //     .subscribe(x => console.log(x));
+        //     Observable.of([1, 2, 3]);
+        
+        // var	observable = observable.subscribe(x => console.log(x));
+        
+        // var	startDates	=	[];
+        // var	startDate	=	new	Date();	//	Assuming	today	for	simplicity
+        // for (var day = -2; day <= 2; day++) {
+        //     var date = new Date(
+        //                         startDate.getFullYear(),
+        //                         startDate.getMonth(),
+        //                         startDate.getDate() + day
+        //     );
+        //     startDates.push(date);
 
-        //  var keyups = Observable.fromEvent($("#search"), "keyup");
-        //  keyups.subscribe( data => console.log(data));
+        // }  
+        // Observable.fromArray(startDates)
+		// 		.map(date	=>	{	
+        // 	 	 	console.log("Getting	deals	for	date	"	+	date);
+        // 	 	 	return	[1,	2,	3];
+	 	// 		})
+		// 		.subscribe(x =>	console.log(x));	
+        //  console.log(new Observable());
+           // Observable.fromArray([1, 2, 3]);
+        // var	observable	=	Observable.interval(6000);	
+        // observable.flatMap(x => {
+        //     console.log("calling the server	to get the latest news");
+        //     return observable [1, 2, 3];
+        // })
+        //     .subscribe(news => console.log(news));
+        
+        //Observable.forkJoin(obs1, obs2);
+        var	userStream	=	Observable.of({	
+        						userId:	1,	username:	'Rizwan Zaheer'	
+                            }).delay(2000);	
+        var tweetsStream = Observable.of([1, 2, 3, 2, 3]).delay(1500);
+        Observable.forkJoin(userStream, tweetsStream)
+                    .map(joined	=>	new	Object({user:	joined[0],	tweets:	joined[1]	}))    
+            .subscribe(a => console.log(a)// error => console.error(error)
+                        );
+        var observable = Observable.throw(new Error("Something failed."));
+        observable.subscribe(
+        				x	=>	console.log(x)
+        				//error	=>	console.error(error)
+        );	
+        // var keyups = Observable.fromEvent($("#search"), "keyup")
+        //     .map(e =>  e.target.value)
+        //     .filter(text => text.length >= 3)
+        //     .debounceTime(400)
+        //     .distinctUntilChanged()
+        //     .flatMap(searchTearm => {
+        //         var url = "https://api.spotify.com/v1/search?type=artist&q=" + searchTearm;
+        //         var promise:any = $.getJSON(url);
+        //         return Observable.fromPromise(promise);
 
-
-
+        //     });        
+        // var subscription = keyups.subscribe(data => console.log(data)); 
+        // subscription.unsubscribe();
         //  var debounced = _.debounce(function (text) {
-        //      var url = "https://api.spotify.com/v1/search?type=artist&q=" + text;
+        //     var url = "https://api.spotify.com/v1/search?type=artist&q=" + text;
         //     $.getJSON(url, function (artists) {
         //         console.log(artists);
                 
         //      });
         //  },400);
 
-         $("#search").keyup(function (e) {
-             var text = e.target.value;
-             console.log("Zaheer");
+        //   $("#search").keyup(function (e) {
+        //       var text = e.target.value;
+        //       console.log(text);
+              
+        //      console.log("Zaheer");
+        //      var url = "https://api.spotify.com/v1/search?type=artist&q=" + text;
+        //         $.getJSON(url, function (artists) {
+        //              console.log(artists); 
+        //          });
+    
+        //      if (text.length < 3) {
+        //          return;
+        //      } 
+        //        console.log("attique");
+        //        debounced(text);
             
-
-             if (text.length < 3) {
-                 return;
-             } 
-             console.log("attique");
-            // debounced(text);
-            
-         });
+        //   });
     }
     votePost = {
         voteCount : 10,
