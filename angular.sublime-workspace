@@ -87,7 +87,15 @@
 			"file": "app/app.component.ts",
 			"settings":
 			{
-				"buffer_size": 7148,
+				"buffer_size": 7241,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/post.service.ts",
+			"settings":
+			{
+				"buffer_size": 279,
 				"line_ending": "Windows"
 			}
 		}
@@ -223,7 +231,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -232,15 +240,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7148,
+						"buffer_size": 7241,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4190,
-								4190
+								3327,
+								3327
 							]
 						],
 						"settings":
@@ -257,7 +265,42 @@
 							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1170.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/post.service.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 279,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								265,
+								265
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -318,6 +361,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"post.ser",
+				"app\\post.service.ts"
+			],
 			[
 				"app.com",
 				"app\\app.component.ts"

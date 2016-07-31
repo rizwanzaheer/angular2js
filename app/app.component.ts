@@ -1,7 +1,7 @@
 /// <reference path="../typings/globals/jquery/index.d.ts" />
 /// <reference path="../typings/globals/underscore/index.d.ts" />
 
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StarComponent } from './star.component';
 import { LikeComponent } from './like.component';
 import { VoteComponent } from './vote.component';
@@ -18,31 +18,37 @@ import { Observable } from 'rxjs/Rx';
 // import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator';
 // import 'rxjs/add/operator/filter';
+import { PostService } from './post.service';
+import { HTTP_PROVIDERS } from '@angular/http';
+
+
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.template.html',
     directives: [
-                    StarComponent,
-                    LikeComponent,
-                    VoteComponent,
-                    TweetComponent,
-                    ZippyComponent,
-                    BootstrapPanel,
-                    ContactFormComponent,
-                    SignUpFormComponent,
-                    ChangePasswordComponent
-                ],
+        StarComponent,
+        LikeComponent,
+        VoteComponent,
+        TweetComponent,
+        ZippyComponent,
+        BootstrapPanel,
+        ContactFormComponent,
+        SignUpFormComponent,
+        ChangePasswordComponent
+    ],
     providers: [
-                TweetService
-               ],
+        TweetService,
+        PostService,
+        HTTP_PROVIDERS
+    ],
     styles : [`
                 
             `],
     pipes:[ SummaryPipe ]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit,OnDestroy{
     form: ControlGroup;    
     canSave = true;
     viewMode = 'mapView';
@@ -56,15 +62,29 @@ export class AppComponent {
         releaseDate: new Date(),
         body:"This is a Body!",
     }
+    // This function call after calling the constructor of the class!
+    ngOnInit() {
+        this._postService.getPosts()
+            .subscribe(post => console.log(
+                "Id = "+ post[0].id +" <br/ > Title  =" +  post[0].title + " <br/> Body ="+ post[0].body));
+    }
 
-    constructor(tweetService: TweetService, fb: FormBuilder){
-        	
-
+    ngOnDestroy() {
+        console.log("Destroy is working Properly!");
+        
+    }    
+    
+    constructor(tweetService: TweetService, fb: FormBuilder,private _postService: PostService){
+        this._postService.creatPost({
+            userId : 1,
+            title : "Testing",
+            body : 'This is the body of the Post Obj Class!'
+        });
         this.tweets = tweetService.getTweets();
         	this.form = fb.group({
 							search:	[]
         });
-
+    
         // var	search = this.form.find('search');
         // search.valueChanges
         //     .debounceTime(400)
