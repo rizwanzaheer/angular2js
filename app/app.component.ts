@@ -103,45 +103,45 @@ export class AppComponent {
         //Observable.forkJoin(obs1, obs2);
         
         
-        var	userStream	=	Observable.of({	
-        						userId:	1,	username: 'Rizwan Zaheer'	
-                            }).delay(2000);	
-        var tweetsStream = Observable.of([1, 2, 3, 2, 3]).delay(1500);
-        Observable.forkJoin(userStream, tweetsStream)
-                    .map(joined	=>	new	Object({user:	joined[0],	tweets:	joined[1]	}))    
-            .subscribe(a => console.log(a),error => console.error(error)
-                        );
+        // var	userStream	=	Observable.of({	
+        // 						userId:	1,	username: 'Rizwan Zaheer'	
+        //                     }).delay(2000);	
+        // var tweetsStream = Observable.of([1, 2, 3, 2, 3]).delay(1500);
+        // Observable.forkJoin(userStream, tweetsStream)
+        //             .map(joined	=>	new	Object({user:	joined[0],	tweets:	joined[1]	}))    
+        //     .subscribe(a => console.log(a),error => console.error(error)
+        //                 );
         
 
-        var observable = Observable.throw(new Error("Something failed."));
-        observable.retry(3)
-        var counter = 0;
-        var url = "https://api.spotify.com/v1/search?type=artist&q=john";
-        var ajaxCall = Observable.of('Url')
-        .flatMap(() => {
-            if(++counter < 2 ) 
-                return Observable.throw(new Error("Request Url faild!"));
+        // var observable = Observable.throw(new Error("Something failed."));
+        // observable.retry(3)
+        // var counter = 0;
+        // var url = "https://api.spotify.com/v1/search?type=artist&q=john";
+        // var ajaxCall = Observable.of('Url')
+        // .flatMap(() => {
+        //     if(++counter < 2 ) 
+        //         return Observable.throw(new Error("Request Url faild!"));
 
-            return Observable.of([1,2,3]);
+        //     return Observable.of([1,2,3]);
 
-            });
-        ajaxCall.subscribe(x => console.log(x),
-            error => console.log(error)
-        )
+        //     });
+        // ajaxCall.subscribe(x => console.log(x),
+        //     error => console.log(error)
+        // )
 
-        var remoteDataStream = Observable.throw(new Error("Something went's Worng!"));
-        remoteDataStream.catch(err => {
-            var localDataStream = Observable.of([1, 2, 3, 4]);
-            return localDataStream;
+        // var remoteDataStream = Observable.throw(new Error("Something went's Worng!"));
+        // remoteDataStream.catch(err => {
+        //     var localDataStream = Observable.of([1, 2, 3, 4]);
+        //     return localDataStream;
 
-        }).subscribe(x => console.log(x));
+        // }).subscribe(x => console.log(x));
 
-        remoteDataStream.timeout(5000)
-            .subscribe(x => console.log(x),
-            error => console.error(error),
-            () => console.log("Request Completed!")
+        // remoteDataStream.timeout(5000)
+        //     .subscribe(x => console.log(x),
+        //     error => console.error(error),
+        //     () => console.log("Request Completed!")
             
-        );
+        // );
 
 
         // observable.subscribe(
