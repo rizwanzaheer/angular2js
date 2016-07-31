@@ -66,7 +66,7 @@ export class AppComponent implements OnInit,OnDestroy{
     ngOnInit() {
         this._postService.getPosts()
             .subscribe(post => console.log(
-                "Id = "+ post[0].id +" <br/ > Title  =" +  post[0].title + " <br/> Body ="+ post[0].body));
+                 post[0].id ,post[0].title ,post[0].body));
     }
 
     ngOnDestroy() {
