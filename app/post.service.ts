@@ -1,6 +1,7 @@
 import { Http } from '@angular/http';
 import  { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 import { Post } from './post';
 import { Observable } from 'rxjs/Observable';
 
@@ -15,10 +16,19 @@ export class PostService {
     constructor(private _http : Http) {
         
     }
-    getPosts(): Observable<Post[]> {
+    
+    // here we return a promise    
+    getPosts(): Promise<Post[]> {
         return this._http.get(this._url)
-            .map(res => res.json());
+            .map(res => res.json())
+            .toPromise();
     }
+
+    // here we return a Observable
+    // getPosts(): Observable<Post[]> {
+    //     return this._http.get(this._url)
+    //         .map(res => res.json());
+    // }
 
     creatPost(post: Post) {
         return this._http.post(this._url, JSON.stringify(post))

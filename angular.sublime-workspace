@@ -87,7 +87,7 @@
 			"file": "app/app.component.ts",
 			"settings":
 			{
-				"buffer_size": 7241,
+				"buffer_size": 7892,
 				"line_ending": "Windows"
 			}
 		},
@@ -95,7 +95,7 @@
 			"file": "app/post.service.ts",
 			"settings":
 			{
-				"buffer_size": 279,
+				"buffer_size": 636,
 				"line_ending": "Windows"
 			}
 		}
@@ -240,15 +240,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7241,
+						"buffer_size": 7892,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3327,
-								3327
+								0,
+								0
 							]
 						],
 						"settings":
@@ -277,15 +277,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 279,
+						"buffer_size": 636,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								265,
-								265
+								0,
+								0
 							]
 						],
 						"settings":

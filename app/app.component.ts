@@ -62,11 +62,22 @@ export class AppComponent implements OnInit,OnDestroy{
         releaseDate: new Date(),
         body:"This is a Body!",
     }
+    isLoading = true;
     // This function call after calling the constructor of the class!
     ngOnInit() {
+        // this is used for Observable return type 
+        // this._postService.getPosts()
+        //     .subscribe(post => {
+        //         this.isLoading = false;
+        //         console.log(post[2].id + post[2].title + post[2].body);
+        //     });
+
+        // this is used for promise return type
         this._postService.getPosts()
-            .subscribe(post => console.log(
-                 post[0].id ,post[0].title ,post[0].body));
+            .then(post => {
+                this.isLoading = false;
+                console.log(post[2].id + post[2].title + post[2].body);
+            });
     }
 
     ngOnDestroy() {
