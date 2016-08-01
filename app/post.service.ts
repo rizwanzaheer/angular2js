@@ -18,18 +18,24 @@ export class PostService {
     }
     
     // here we return a promise    
-    getPosts(): Promise<Post[]> {
-        return this._http.get(this._url)
-            .map(res => res.json())
-            .toPromise();
-    }
-
-    // here we return a Observable
-    // getPosts(): Observable<Post[]> {
+    // getPosts(): Promise<Post[]> {
     //     return this._http.get(this._url)
-    //         .map(res => res.json());
+    //         .map(res => res.json())
+    //         .toPromise();
     // }
 
+    // here we return a Observable
+    getPosts(): Observable<Post[]> {
+        return this._http.get(this._url)
+            .map(res => res.json());
+    }
+    // gets() {
+    //     var	headers	=	new	Headers({
+    //     				'key':	'value'
+    //     });	
+    //     var	options	=	new	RequestOptions({	headers:	headers	});	
+    //     return this._http.get(this._url,	options).map(res => res.json());	
+    // }
     creatPost(post: Post) {
         return this._http.post(this._url, JSON.stringify(post))
             .map(res => res.json());

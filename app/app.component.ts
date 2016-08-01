@@ -20,6 +20,9 @@ import { Observable } from 'rxjs/Rx';
 // import 'rxjs/add/operator/filter';
 import { PostService } from './post.service';
 import { HTTP_PROVIDERS } from '@angular/http';
+//import { JSONP_PROVIDERS } from '@angular/core';
+import { GitHubProfileComponent } from './github-profile.component';
+import { GithubService } from './github.service';
 
 
 
@@ -40,7 +43,9 @@ import { HTTP_PROVIDERS } from '@angular/http';
     providers: [
         TweetService,
         PostService,
-        HTTP_PROVIDERS
+        HTTP_PROVIDERS,
+        //JSONP_PROVIDERS,
+        GithubService
     ],
     styles : [`
                 
@@ -63,21 +68,22 @@ export class AppComponent implements OnInit,OnDestroy{
         body:"This is a Body!",
     }
     isLoading = true;
+    posts: any[];
     // This function call after calling the constructor of the class!
     ngOnInit() {
         // this is used for Observable return type 
-        // this._postService.getPosts()
-        //     .subscribe(post => {
-        //         this.isLoading = false;
-        //         console.log(post[2].id + post[2].title + post[2].body);
-        //     });
-
-        // this is used for promise return type
         this._postService.getPosts()
-            .then(post => {
+            .subscribe(post => {
                 this.isLoading = false;
                 console.log(post[2].id + post[2].title + post[2].body);
             });
+
+        // this is used for promise return type
+        // this._postService.getPosts()
+        //     .then(post => {
+        //         this.isLoading = false;
+        //         console.log(post[2].id + post[2].title + post[2].body);
+        //     });
     }
 
     ngOnDestroy() {
