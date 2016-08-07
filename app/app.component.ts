@@ -13,7 +13,7 @@ import { ZippyComponent } from './zippy.component';
 import { ContactFormComponent } from './contact-form.component';
 import { SignUpFormComponent } from './signup-form.component';
 import { ChangePasswordComponent } from './change-password.component';
-import	{ControlGroup,	FormBuilder} from '@angular/common';
+import { ControlGroup, FormBuilder} from '@angular/common';
 import { Observable } from 'rxjs/Rx';
 // import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator';
@@ -38,7 +38,8 @@ import { GithubService } from './github.service';
         BootstrapPanel,
         ContactFormComponent,
         SignUpFormComponent,
-        ChangePasswordComponent
+        ChangePasswordComponent,
+        GitHubProfileComponent
     ],
     providers: [
         TweetService,
@@ -48,8 +49,7 @@ import { GithubService } from './github.service';
         GithubService
     ],
     styles : [`
-                
-            `],
+    `],
     pipes:[ SummaryPipe ]
 })
 
@@ -91,7 +91,8 @@ export class AppComponent implements OnInit,OnDestroy{
         
     }    
     
-    constructor(tweetService: TweetService, fb: FormBuilder,private _postService: PostService){
+    constructor(tweetService: TweetService, fb: FormBuilder, private _postService: PostService) {
+        console.log("In AppComponent constructor!");
         this._postService.creatPost({
             userId : 1,
             title : "Testing",
