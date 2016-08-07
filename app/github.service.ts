@@ -14,8 +14,7 @@ export class GithubService {
    /* private _users = 'https://api.github.com/users/octocat';
     private _followers = 'https://api.github.com/users/octocat/followers';*/
     constructor(private _http : Http) {
-        console.log("In github service constructor!");
-        
+        console.log("In github service constructor!");        
     }
 
     getUser(username) {
