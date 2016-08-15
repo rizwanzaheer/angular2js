@@ -28,7 +28,7 @@ import { GithubService } from './github.service';
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/app.template.html',
+    templateUrl: './app/app.template.html',
     directives: [
         StarComponent,
         LikeComponent,

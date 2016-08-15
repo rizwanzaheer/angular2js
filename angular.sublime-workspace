@@ -84,10 +84,18 @@
 	"buffers":
 	[
 		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1682,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "app/app.component.ts",
 			"settings":
 			{
-				"buffer_size": 8415,
+				"buffer_size": 8504,
 				"line_ending": "Windows"
 			}
 		},
@@ -103,7 +111,7 @@
 			"file": "app/github.service.ts",
 			"settings":
 			{
-				"buffer_size": 790,
+				"buffer_size": 844,
 				"line_ending": "Windows"
 			}
 		},
@@ -119,7 +127,7 @@
 			"file": "app/github-profile.component.ts",
 			"settings":
 			{
-				"buffer_size": 1739,
+				"buffer_size": 1785,
 				"line_ending": "Windows"
 			}
 		}
@@ -161,6 +169,8 @@
 	],
 	"file_history":
 	[
+		"/G/wamp64/www/angular/app/app.component.ts",
+		"/G/wamp64/www/angular/package.json",
 		"/C/Users/Rizwan/AppData/Local/Temp/Rar$DRa0.468/Solution - Connecting to the Server/github-profile.component.ts",
 		"/G/wamp64/www/angular/app/post.service.ts",
 		"/C/Users/Rizwan/AppData/Local/Temp/Rar$DRa0.468/Solution - Connecting to the Server/github.service.ts",
@@ -260,28 +270,63 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/app.component.ts",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8415,
+						"buffer_size": 1682,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1779,
-								1779
+								35,
+								35
 							]
 						],
 						"settings":
 						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/app.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8504,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								977,
+								950
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
@@ -301,7 +346,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "app/app.template.html",
 					"semi_transient": false,
 					"settings":
@@ -324,31 +369,36 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1170.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "app/github.service.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 790,
+						"buffer_size": 844,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31,
-								31
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
@@ -368,7 +418,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "app/post.service.ts",
 					"semi_transient": false,
 					"settings":
@@ -386,9 +436,20 @@
 						],
 						"settings":
 						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
 							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
@@ -399,27 +460,38 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "app/github-profile.component.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1739,
+						"buffer_size": 1785,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								263,
-								277
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
 							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
@@ -484,6 +556,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"index.html",
+				"index.html"
+			],
 			[
 				"app.tem",
 				"app\\app.template.html"
